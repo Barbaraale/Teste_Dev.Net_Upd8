@@ -1,0 +1,9 @@
+Criar tabela no banco de dados:
+	1. No menu de navegação, clique em Tools
+	2. Siga até NuGet Package Manager
+	3. Depois clique em Package Manager Console
+
+O console será aperto e basta colar o código a seguir e dar enter:
+	1. Update-Database -Context BancoContext 
+
+Não esquecer de mudar a configuração do banco de dados no appsettings.json se necessário.
