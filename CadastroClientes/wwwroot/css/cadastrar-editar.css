@@ -1,0 +1,39 @@
+﻿form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 160px;
+}
+
+.form-group{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-item {
+    align-items: center;
+    display: flex;
+}
+
+label{
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.div-btn{
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-between;
+    width: 155px;
+}
+
+input[type=text], input[type=date] {
+    border: 1px solid #6c757d;
+    border-radius: 15px;
+}
+
+input[type=radio]{
+    cursor: pointer;
+}
+

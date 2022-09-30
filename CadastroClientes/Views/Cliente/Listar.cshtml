@@ -1,0 +1,43 @@
+﻿@model List<ClienteModel>
+@{
+    ViewData["Title"] = "Consultar";
+}
+
+<h1>Listagem de Clientes</h1>
+
+<table class="table table-bordered" id="tbl-clientes">
+    <thead>
+        <tr>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col">Cliente</th>
+            <th scope="col">CPF</th>
+            <th scope="col">Data Nasc.</th>
+            <th scope="col">Sexo</th>
+            <th scope="col">Cidade</th>
+            <th scope="col">Estado</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach(var item in Model)
+            {
+                <tr>
+                    <td scope="row">
+                        <a role="button" class="btn btn-success btn-sm" asp-controller="Cliente" asp-action="Editar" asp-route-id="@item.Id">Editar</a>
+                    </td>
+                    <td>
+                        <a type="submit" class="btn btn-delete btn-danger btn-sm" asp-controller="Cliente" asp-action="Deletar" asp-route-id="@item.Id" onclick="confirmacaoExclusao(event)">Excluir</a>
+                    </td>
+                    <td>@item.Nome</td>
+                    <td>@item.CPF</td>
+                    <td>@String.Format("{0:dd/MM/yyyy}", @item.DataNascimento)</td>
+                    <td>@item.Sexo</td>
+                    <td>@item.Cidade</td>
+                    <td>@item.Estado</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
